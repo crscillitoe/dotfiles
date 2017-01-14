@@ -1,0 +1,113 @@
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+
+Xft.dpi:                    100
+Xft.antialias:              false
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+!-------------------------------------------------------------------------------
+! URxvt settings
+! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
+! More info at:
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
+!-------------------------------------------------------------------------------
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+URxvt.loginShell:           true
+URxvt.saveLines:            600
+URxvt.internalBorder:       0
+URxvt.lineSpace:            0
+
+! Fonts
+URxvt.allow_bold:           false
+
+URxvt*font: xft:Monospace:size=12:hinting=false
+
+! Fix font space
+URxvt*letterSpace: -1
+
+URxvt*iso14755: False
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          firefox
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #65737e
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+URxvt* iso14755: False
+URxvt* iso14755_52: False
+
+URxvt*termName: rxvt-256color
+
+
+urxvt*transparent: false
+#urxvt*shading: 120
+#urxvt*tintColor: #2B303B
+#urxvt*blurRadius: 20
+
+
+#define #2b303b #2b303b
+#define #343d46 #343d46
+#define #4f5b66 #4f5b66
+#define #65737e #65737e
+#define #a7adba #a7adba
+#define #c0c5ce #c0c5ce
+#define #dfe1e8 #dfe1e8
+#define #eff1f5 #eff1f5
+#define #bf616a #bf616a
+#define #d08770 #d08770
+#define #ebcb8b #ebcb8b
+#define #a3be8c #a3be8c
+#define #96b5b4 #96b5b4
+#define #8fa1b3 #8fa1b3
+#define #b48ead #b48ead
+#define #ab7967 #ab7967
+
+URxvt*.foreground:   #c0c5ce
+URxvt*.background:   #2b303b
+URxvt*.cursorColor:  #c0c5ce
+
+URxvt*.color0:       #2b303b
+URxvt*.color1:       #bf616a
+URxvt*.color2:       #a3be8c
+URxvt*.color3:       #ebcb8b
+URxvt*.color4:       #8fa1b3
+URxvt*.color5:       #b48ead
+URxvt*.color6:       #96b5b4
+URxvt*.color7:       #c0c5ce
+
+URxvt*.color8:       #65737e
+URxvt*.color9:       #bf616a
+URxvt*.color10:      #a3be8c
+URxvt*.color11:      #ebcb8b
+URxvt*.color12:      #8fa1b3
+URxvt*.color13:      #b48ead
+URxvt*.color14:      #96b5b4
+URxvt*.color15:      #eff1f5
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+URxvt*.color16:      #d08770
+URxvt*.color17:      #ab7967
+URxvt*.color18:      #343d46
+URxvt*.color19:      #4f5b66
+URxvt*.color20:      #a7adba
+URxvt*.color21:      #dfe1e8
+
