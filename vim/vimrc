@@ -4,21 +4,31 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'rust-lang/rust.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'sk1418/HowMuch'
+Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'vim-scripts/DrawIt'
 Plugin 'crscillitoe/C'
 Plugin 'benmills/vimux'
-Plugin 'godlygeek/csapprox'
-Plugin 'Lokaltog/vim-powerline'
+"Plugin 'godlygeek/csapprox'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
-
 call vundle#end()
 
 set t_Co=256
 
 colorscheme gruvbox
+"let g:solarized_termcolors=256
+"colorscheme solarized
 
+"Use dark theme
+set background=dark
 
 "press Ctrl + N to open NerdTree
 map <C-n> :NERDTreeToggle<CR>
@@ -26,27 +36,43 @@ map <C-n> :NERDTreeToggle<CR>
 "Auto close vim if NerdTree is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+
+nnoremap <F5> yyp<c-v>$r-
+
+
+function! s:Figlet()
+ y"f
+ let val = f
+ :read !figlet val
+endfunction
+
+
+function! s:Underline(chars)
+  let chars = empty(a:chars) ? '-' : a:chars
+  let nr_columns = virtcol('$') - 1
+  let uline = repeat(chars, (nr_columns / len(chars)) + 1)
+  put =strpart(uline, 0, nr_columns)
+endfunction
+command! -nargs=? Underline call s:Underline(<q-args>)
+
 set laststatus=2
 
 "set synmaxcol=120
 
 let itermenv=$ITERM_PROFILE
 
-if itermenv == 'Copy of Default'
-  set background=light
-endif
 
 set runtimepath+=~/dotfiles/vim
 
 " Don't use vi settings
 set encoding=utf-8
-
+let g:Powerline_symbols = 'fancy'
 " spell check
 autocmd BufRead *.md setlocal spell spelllang=en_us
 
 " column 120
 if exists('+colorcolumn')
-  set colorcolumn=120
+  set colorcolumn=250
 endif
 
 
@@ -95,20 +121,14 @@ let mapleader = ","
 
 " Use spaces instead of tab
 set expandtab
-set tabstop=2
-set shiftwidth=2 
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
-"Use dark theme
-set background=dark
 
 " Allow backspaces
 set backspace=indent,eol,start
 
-" In many terminal emulators the mouse works just fine
-if has('mouse')
-  set mouse=a
-endif
 
 " Get rid of bell
 set noerrorbells
@@ -166,6 +186,8 @@ map GW <C-w>W
 " switch tab
 map GT gT
 
+let g:airline_powerline_fonts = 1
+
 " autocomplete mode
 set wildmode=list:longest,list:full
 
@@ -174,6 +196,7 @@ nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
+map <Leader>f dd :read !figlet <C-r>" <CR>
 
 " Limelight
 " Color name (:help cterm-colors) or ANSI code
@@ -198,7 +221,16 @@ set go-=r
 set go-=L
 set guifont=Courier\ 10
 
-nmap <leader>p :w <bar> call DoEverything('python3 ' . expand('%:p'))<cr>
+let g:airline_theme='gruvbox'
+"TRANSPARENCY
+autocmd VimEnter * hi Normal ctermbg=none
+
+nmap <leader>2 :w <bar> call DoEverything('python ' . expand('%:p'))<cr>
+nmap <leader>3 :w <bar> call DoEverything('python3 ' . expand('%:p'))<cr>
+
+
+
+
 nmap <leader>c :call VimuxRunCommand('cd ' . expand('%:p:h') . ' && make && ./toRun')<cr>
 nmap <leader>e :call VimuxRunCommand('echo hi')<cr>
 
@@ -211,4 +243,3 @@ function Inc(...)
   let g:i += a:0 > 0 ? a:1 : 1
   return result
 endfunction
-
