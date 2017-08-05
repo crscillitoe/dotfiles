@@ -7,7 +7,14 @@ Xft.dpi:    150
 *pointerColorBackground:#2B2C2B
 *pointerColorForeground:#16A085
 
-URxvt.internalBorder: 0
+URxvt.internalBorder: 2
+URxvt.perl-lib: /home/christian/git/dotfiles/URXvt/plugins/
+URxvt.perl-ext-common: fullscreen,font-size
+
+URxvt.keysym.F11: perl:fullscreen:switch
+URxvt.keysym.C-equal:     font-size:increase
+URxvt.keysym.C-minus:     font-size:decrease
+
 *background:            #303030
 *foreground:            #839496
 *fadeColor:             #002b36
