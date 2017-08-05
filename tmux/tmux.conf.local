@@ -76,20 +76,20 @@ tmux_conf_theme_status_attr='none'
 # window status style
 #   - built-in variables are:
 #     - #{circled_window_index}
-tmux_conf_theme_window_status_fg='#839496'              # light gray
-tmux_conf_theme_window_status_bg='#303030'              # dark gray
+tmux_conf_theme_window_status_fg='#303030'              # light gray
+tmux_conf_theme_window_status_bg='#839496'              # dark gray
 tmux_conf_theme_window_status_attr='none'
-tmux_conf_theme_window_status_format='#I #W'
+tmux_conf_theme_window_status_format=' #I #W '
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_format='#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}'
 
 # window current status style
 #   - built-in variables are:
 #     - #{circled_window_index}
-tmux_conf_theme_window_status_current_fg='#303030'      # black
-tmux_conf_theme_window_status_current_bg='#839496'      # light blue
+tmux_conf_theme_window_status_current_fg='#839496'      # black
+tmux_conf_theme_window_status_current_bg='#303030'      # light blue
 tmux_conf_theme_window_status_current_attr='bold'
-tmux_conf_theme_window_status_current_format='#I #W'
+tmux_conf_theme_window_status_current_format=' #I #W '
 #tmux_conf_theme_window_status_current_format='#{circled_window_index} #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
 
@@ -104,8 +104,8 @@ tmux_conf_theme_window_status_bell_bg='default'
 tmux_conf_theme_window_status_bell_attr='blink,bold'
 
 # window last status style
-tmux_conf_theme_window_status_last_fg='#839496'         # light blue
-tmux_conf_theme_window_status_last_bg='default'
+tmux_conf_theme_window_status_last_fg='#303030'         # light blue
+tmux_conf_theme_window_status_last_bg='#839496'
 tmux_conf_theme_window_status_last_attr='none'
 
 # status left/right sections separators
