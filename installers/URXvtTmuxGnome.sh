@@ -23,4 +23,4 @@ cp ~/.Xdefaults ~/.Xdefaults.OLD
 echo "Installing my Xdefault configuration..."
 cp ../URXvt/Xdefaults ~/.Xdefaults
 
-echo "Make sure this git repo is saved inside '~/git/dotfiles/' or else URXvt plugins will not work properly!"
+echo "You will need to edit your .Xdefaults file on line 11 and configure the path to the 'Plugins folder' properly."
