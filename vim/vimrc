@@ -22,11 +22,16 @@ call vundle#end()
 
 set t_Co=256
 
-colorscheme gruvbox
-"let g:solarized_termcolors=256
-"colorscheme solarized
+"colorscheme gruvbox
+let g:solarized_termcolors=16
+colorscheme solarized
 
-"Use dark theme
+"let g:airline_theme='gruvbox'
+let g:airline_theme='solarized'
+"TRANSPARENCY
+"autocmd VimEnter * hi Normal ctermbg=none
+
+"Use dark/light theme
 set background=dark
 
 "press Ctrl + N to open NerdTree
@@ -220,9 +225,6 @@ set go-=r
 set go-=L
 set guifont=Courier\ 10
 
-let g:airline_theme='gruvbox'
-"TRANSPARENCY
-autocmd VimEnter * hi Normal ctermbg=none
 
 nmap <leader>2 :w <bar> call DoEverything('python ' . expand('%:p'))<cr>
 nmap <leader>3 :w <bar> call DoEverything('python3 ' . expand('%:p'))<cr>
