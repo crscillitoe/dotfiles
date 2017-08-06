@@ -8,7 +8,7 @@ Xft.dpi:    150
 *pointerColorForeground:#16A085
 
 URxvt.internalBorder: 2
-URxvt.perl-lib: /home/christian/git/dotfiles/URXvt/plugins/
+URxvt.perl-lib: ~/git/dotfiles/URXvt/plugins/
 URxvt.perl-ext-common: fullscreen,font-size
 
 URxvt.keysym.F11: perl:fullscreen:switch
