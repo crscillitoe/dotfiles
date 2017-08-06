@@ -23,4 +23,7 @@ cp ~/.Xdefaults ~/.Xdefaults.OLD
 echo "Installing my Xdefault configuration..."
 cp ../URXvt/Xdefaults ~/.Xdefaults
 
+echo ""
 echo "You will need to edit your .Xdefaults file on line 11 and configure the path to the 'Plugins folder' properly."
+
+echo "To change the name displayed at the bottom right of the tmux session, edit '~/.tmux.conf.local' and change 'Christian' to your name"
