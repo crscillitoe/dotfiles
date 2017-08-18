@@ -228,8 +228,8 @@ set go-=L
 set guifont=Courier\ 10
 
 
-nmap <leader>2 :w <bar> call DoEverything('python ' . expand('%:p'))<cr>
-nmap <leader>3 :w <bar> call DoEverything('python3 ' . expand('%:p'))<cr>
+nmap <leader>2 :w <bar> call VimuxRunCommand('python ' . expand('%:p'))<cr>
+nmap <leader>3 :w <bar> call VimuxRunCommand('python3 ' . expand('%:p'))<cr>
 
 
 
