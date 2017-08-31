@@ -61,6 +61,7 @@ Xcursor.size:  0
 
 #URxvt*font: xft:Droid Sans Mono for Powerline:size=10:hinting=false
 URxvt*font: xft:DroidSansMonoForPowerline Nerd Font:size=12:hinting=false
+#URxvt*font: xft:RobotoMono Nerd Font:size=12:hinting=false
 URxvt.depth: 32
 #URxvt.background:	[100]#1E272B
 URxvt*scrollBar:                      false
