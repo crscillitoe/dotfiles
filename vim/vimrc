@@ -24,12 +24,12 @@ call vundle#end()
 
 set t_Co=256
 
-"colorscheme gruvbox
+colorscheme gruvbox
 let g:solarized_termcolors=16
-colorscheme solarized
+"colorscheme solarized
 
-"let g:airline_theme='gruvbox'
-let g:airline_theme='solarized'
+let g:airline_theme='gruvbox'
+"let g:airline_theme='solarized'
 "TRANSPARENCY
 "autocmd VimEnter * hi Normal ctermbg=none
 
@@ -230,6 +230,7 @@ set guifont=Courier\ 10
 
 nmap <leader>2 :w <bar> call VimuxRunCommand('python ' . expand('%:p'))<cr>
 nmap <leader>3 :w <bar> call VimuxRunCommand('python3 ' . expand('%:p'))<cr>
+nmap <leader>g :w <bar> call VimuxRunCommand('grip -b ' . expand('%:p'))<cr>
 
 
 
