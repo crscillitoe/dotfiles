@@ -1,3 +1,2 @@
-#!/bin/bash
-sh ~/.screenlayout/Gnome.sh
-sh ~/Scripts/mouse.sh
+sh /home/christian/Scripts/mount.sh
+kwin_x11 --replace
