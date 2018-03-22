@@ -11,7 +11,8 @@ def main() :
     for w in words :
         if nextVal == True :
             mouseID = w.split("=")[1]
-            os.system("sh mouseID.sh 0.3 {}".format(mouseID))
+            os.system("sh /home/christian/git/dotfiles/Scripts/mouseID.sh 0.2 {}".format(mouseID))
+            os.system("rm temp.txt")
             break
         if w == "Master" :
             nextVal = True

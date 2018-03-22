@@ -4,6 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'chriskempson/base16-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'sk1418/HowMuch'
@@ -24,14 +25,18 @@ call vundle#end()
 
 set t_Co=256
 
+
+let base16colorspace=256
+
 "colorscheme gruvbox
+colorscheme base16-default-dark
 let g:solarized_termcolors=16
-colorscheme solarized
+"colorscheme solarized
 
 let g:airline_theme='gruvbox'
 "let g:airline_theme='solarized'
 "TRANSPARENCY
-"autocmd VimEnter * hi Normal ctermbg=none
+autocmd VimEnter * hi Normal ctermbg=none
 
 "Use dark/light theme
 set background=dark
@@ -229,7 +234,7 @@ set guifont=Courier\ 10
 
 
 nmap <leader>2 :w <bar> call VimuxRunCommand('python ' . expand('%:p'))<cr>
-nmap <leader>3 :w <bar> call VimuxRunCommand('python3 ' . expand('%:p'))<cr>
+nmap <leader>3 :w <bar> call VimuxRunCommand('ipython ' . expand('%:p') . ' -i')<cr>
 nmap <leader>g :w <bar> call VimuxRunCommand('grip -b ' . expand('%:p'))<cr>
 
 
