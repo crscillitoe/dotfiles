@@ -88,15 +88,8 @@ endif
 
 
 " Turn on line numbering. Turn it off with "set nonu" 
-if exists('+rnu')
-  set rnu
-  au InsertEnter * :set nu
-  au InsertLeave * :set rnu
-  au FocusLost * :set nu
-  au FocusGained * :set rnu
-else
-  set number
-endif
+set rnu
+set nu
 
 
 " allow plugin, indent, etc
@@ -107,8 +100,8 @@ set autoindent
 set ic
 set smartcase
 
-" Higlhight search
-set hls
+" Highlight search
+" set hls
 
 syntax enable
 
