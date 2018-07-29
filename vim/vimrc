@@ -20,6 +20,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'jnurmine/Zenburn'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 
@@ -28,8 +30,9 @@ set t_Co=256
 
 let base16colorspace=256
 
+colorscheme base16-monokai
 "colorscheme gruvbox
-colorscheme base16-default-dark
+"colorscheme base16-default-dark
 let g:solarized_termcolors=16
 "colorscheme solarized
 
@@ -88,15 +91,8 @@ endif
 
 
 " Turn on line numbering. Turn it off with "set nonu" 
-if exists('+rnu')
-  set rnu
-  au InsertEnter * :set nu
-  au InsertLeave * :set rnu
-  au FocusLost * :set nu
-  au FocusGained * :set rnu
-else
-  set number
-endif
+set rnu
+set nu
 
 
 " allow plugin, indent, etc
@@ -107,8 +103,8 @@ set autoindent
 set ic
 set smartcase
 
-" Higlhight search
-set hls
+" Highlight search
+" set hls
 
 syntax enable
 
@@ -233,14 +229,16 @@ set go-=L
 set guifont=Courier\ 10
 
 
-nmap <leader>2 :w <bar> call VimuxRunCommand('python ' . expand('%:p'))<cr>
-nmap <leader>3 :w <bar> call VimuxRunCommand('ipython ' . expand('%:p') . ' -i')<cr>
+nmap <leader>2 :w <bar> call VimuxRunCommand('python3 ' . expand('%:p'))<cr>
+nmap <leader>3 :w <bar> call VimuxRunCommand('cd ' . expand('%:p:h') . ' && ipython ' . expand('%:p') . ' -i')<cr>
 nmap <leader>g :w <bar> call VimuxRunCommand('grip -b ' . expand('%:p'))<cr>
 
 
 
 
-nmap <leader>c :call VimuxRunCommand('cd ' . expand('%:p:h') . ' && make && ./toRun')<cr>
+nmap <leader>p :call VimuxRunCommand('cd ' . expand('%:p:h') . ' && dotnet run')<cr>
+
+nmap <leader>c :call VimuxRunCommand('cd ' . expand('%:p:h') . ' && make clean && make && clear && ./toRun')<cr>
 nmap <leader>e :call VimuxRunCommand('echo hi')<cr>
 
 
