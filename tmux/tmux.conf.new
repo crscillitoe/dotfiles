@@ -34,9 +34,6 @@ bind -n M-9 if-shell 'tmux select-window -t :9' '' 'new-window -t :9'
 bind -n M-p new-window
  
 set -g status-justify left
-setw -g window-status-format " #F#I:#W#F "
-setw -g window-status-current-format " #F#I:#W#F "
-setw -g automatic-rename-format " #F#I:#W#F "
 
 setw -g pane-base-index 1   # make pane numbering consistent with windows
 
