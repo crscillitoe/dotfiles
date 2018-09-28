@@ -19,13 +19,15 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'jnurmine/Zenburn'
 Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 
 set t_Co=256
+
+set clipboard=unnamedplus
 
 
 let base16colorspace=256
@@ -128,9 +130,9 @@ let mapleader = ","
 
 " Use spaces instead of tab
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 
 " Allow backspaces
