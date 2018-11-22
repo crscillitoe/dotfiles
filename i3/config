@@ -10,8 +10,9 @@
 #
 
 exec_always killall -q polybar
+exec_always killall -q xfce4-clipman
 set $pixel 0
-set $innergaps 25
+set $innergaps 31
 set $outergaps 0
 set $topgaps 40
 
@@ -59,6 +60,8 @@ floating_modifier Mod4
 
 # start a terminal
 bindsym Mod4+Return exec gnome-terminal
+
+exec gnome-settings-daemon
 
 for_window [class="URxvt" instance="floating"] floating enable
 
@@ -176,6 +179,9 @@ bindsym Mod4+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
+bindsym Control+l exec gnome-screenshot -ca
+
 bindsym Mod4+. exec ~/.i3/lock.sh
 
 
@@ -243,6 +249,7 @@ gaps outer $outergaps
 gaps top $topgaps
 new_window pixel $pixel
 hide_edge_borders none
+for_window [class="^.*"] border pixel 4
 
 
 bindsym Mod4+Shift+f gaps outer current set 0; gaps inner current set 0
@@ -258,11 +265,12 @@ exec_always compton -c -f --config ~/.config/compton.conf
 exec_always /home/christian/.screenlayout/SingleMonitor.sh
 #exec_always /home/christian/.screenlayout/UltraWide.sh
 
-exec spotify --force-device-scale-factor=2.5 %U
+exec spotify
 
 #Set the background image
 #exec_always feh --bg-scale $wallpaper
 exec_always feh --bg-fill $wallpaper
+exec_always xfce4-clipman
 exec_always polybar workspaces
 exec_always polybar spotify
 exec_always polybar left
@@ -271,8 +279,8 @@ exec_always polybar center
 #exec_always polybar dummy
 for_window [class="Spotify"] move to workspace $workspace2
 
-client.focused         	#EAD49B	#1E272B	#EAD49B	#9D6A47		#9D6A47	
-client.unfocused       	#EAD49B	#1E272B	#EAD49B	#78824B		#78824B
+client.focused         	#EAD49B	#1E272B	#EAD49B	#78824B		#78824B
+client.unfocused       	#EAD49B	#FFFFFF	#EAD49B	#78824B		#9D6A47
 client.focused_inactive	#EAD49B	#1E272B	#EAD49B	#78824B		#78824B
 client.urgent		#EAD49B	#1E272B	#EAD49B	#78824B		#78824B
 client.placeholder	#EAD49B	#1E272B	#EAD49B	#78824B		#78824B
