@@ -80,7 +80,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment white black "$USER"
+    prompt_segment yellow black "$USER@CommunitySoftwareGroup"
   fi
 }
 
@@ -187,7 +187,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment white black '%~'
+  prompt_segment white black '[ %~ ]'
 }
 
 # Virtualenv: current working virtualenv
@@ -214,8 +214,7 @@ prompt_status() {
 
 ## Main prompt
 build_prompt() {
-  RETVAL=$?
-  prompt_segment white default 
+  prompt_segment black default "# "
   prompt_status
   prompt_virtualenv
   prompt_dir
@@ -225,7 +224,23 @@ build_prompt() {
   prompt_end
 }
 
-PROMPT='┏$(build_prompt) 
-┃
-┗━━━━$ '
+build_user() {
+  prompt_segment black default "# "
+  prompt_context
+  prompt_end
+}
+
+build_date() {
+  prompt_segment black default "# "
+  prompt_segment yellow black "$(date)"
+  prompt_end
+}
+
+build_entry() {
+  prompt_segment black default "# "
+}
+
+PROMPT='$(build_date)
+$(build_prompt) 
+$(build_entry)'
 
