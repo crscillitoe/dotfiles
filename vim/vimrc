@@ -4,6 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'junegunn/fzf.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'Yggdroot/indentLine'
@@ -28,6 +29,8 @@ call vundle#end()
 set t_Co=256
 
 set clipboard=unnamedplus
+
+set rtp+=~/.fzf
 
 
 let base16colorspace=256
@@ -54,6 +57,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 nnoremap <F5> yyp<c-v>$r-
+
+nnoremap <C-p> :FZF ~<CR>
 
 
 function! s:Figlet()
