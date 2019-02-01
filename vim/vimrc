@@ -4,7 +4,6 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'junegunn/fzf.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'Yggdroot/indentLine'
@@ -13,6 +12,7 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'crscillitoe/C'
 Plugin 'benmills/vimux'
+Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'godlygeek/csapprox'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
@@ -29,8 +29,6 @@ call vundle#end()
 set t_Co=256
 
 set clipboard=unnamedplus
-
-set rtp+=~/.fzf
 
 
 let base16colorspace=256
@@ -57,8 +55,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 nnoremap <F5> yyp<c-v>$r-
-
-nnoremap <C-p> :FZF ~<CR>
 
 
 function! s:Figlet()
@@ -246,6 +242,7 @@ nmap <leader>g :w <bar> call VimuxRunCommand('grip -b ' . expand('%:p'))<cr>
 nmap <leader>p :call VimuxRunCommand('cd ' . expand('%:p:h') . ' && dotnet run')<cr>
 
 nmap <leader>c :call VimuxRunCommand('cd ' . expand('%:p:h') . ' && make clean && make && clear && ./toRun')<cr>
+
 nmap <leader>e :call VimuxRunCommand('echo hi')<cr>
 
 
