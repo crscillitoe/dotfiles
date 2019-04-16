@@ -1,5 +1,5 @@
 set nocompatible
-filetype off 
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -12,7 +12,7 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'crscillitoe/C'
 Plugin 'benmills/vimux'
-Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'godlygeek/csapprox'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
@@ -20,16 +20,16 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'jnurmine/Zenburn'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()
 
 set t_Co=256
 
 set clipboard=unnamedplus
-
 
 let base16colorspace=256
 
@@ -52,6 +52,8 @@ map <C-n> :NERDTreeToggle<CR>
 
 "Auto close vim if NerdTree is the only window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let g:indentLine_char = ''
 
 
 nnoremap <F5> yyp<c-v>$r-
@@ -89,7 +91,7 @@ autocmd BufRead *.md setlocal spell spelllang=en_us
 
 " column 120
 if exists('+colorcolumn')
-  set colorcolumn=250
+  set colorcolumn=200
 endif
 
 
@@ -114,6 +116,8 @@ syntax enable
 
 set guiheadroom=0
 
+let g:ycm_filetype_specific_completion_to_disable = {'cs': 1}
+
 
 set guifont=Source\ Code\ Pro:h14
 
@@ -135,6 +139,10 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+autocmd FileType cs setlocal tabstop=4
+autocmd FileType cs setlocal shiftwidth=4
+autocmd FileType cs setlocal softtabstop=4
+
 
 " Allow backspaces
 set backspace=indent,eol,start
@@ -155,14 +163,6 @@ set lbr " Wrap text instead of being on one line
 set foldlevelstart=99
 set foldlevel=99
 
-" compile commands
-map ,g :!grunt
-map ,m :!make
-map ,c :!make veryclean
-
-" Marked
-map ,r :!open -a "Marked 2" % <CR>
-
 " if md or txt file, set type markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.Rmd set filetype=markdown
@@ -170,9 +170,6 @@ au BufRead,BufNewFile *.markdown set filetype=markdown
 
 " if json, set type javascript
 au BufRead,BufNewFile *.json set filetype=javascript
-
-" Wordcount
-map ,wc :w !wc <CR>
 
 " paste, no paste
 nnoremap <leader>z :set invpaste paste?<CR>
@@ -232,9 +229,7 @@ set go-=L
 set guifont=Courier\ 10
 
 
-nmap <leader>2 :w <bar> call VimuxRunCommand('python3 ' . expand('%:p'))<cr>
-nmap <leader>3 :w <bar> call VimuxRunCommand('cd ' . expand('%:p:h') . ' && ipython ' . expand('%:p') . ' -i')<cr>
-nmap <leader>g :w <bar> call VimuxRunCommand('grip -b ' . expand('%:p'))<cr>
+nmap <C-k> :YcmCompleter GoToDefinition<cr>
 
 
 
